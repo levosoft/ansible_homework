@@ -1,0 +1,21 @@
+---
+- name: Nginx telepítése és konfigurálása
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Nginx telepítése
+      dnf:
+        name: nginx
+        state: present
+
+    - name: Nginx indítása és engedélyezése induláskor
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: HTML fájl létrehozása sablonból
+      template:
+        src: index.html.j2
+        dest: /usr/share/nginx/html/index.html
