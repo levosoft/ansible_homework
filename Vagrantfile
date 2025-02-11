@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
       echo "192.168.56.11 ansible_user=homework ansible_ssh_private_key_file=/vagrant/.vagrant/machines/web/virtualbox/private_key" >> /shared/inventory
     SHELL
     ansible.vm.synced_folder ".", "/vagrant"
-    ansible.vm.synced_folder "./shared", "/shared"
+    ansible.vm.synced_folder "./shared", "/shared", type: "virtualbox"
   end
 
   # Web szerver
