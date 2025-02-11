@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa*
       sudo chmod 600 /home/vagrant/.ssh/id_rsa
       echo "[web]" > /shared/inventory
-      echo "192.168.56.11 ansible_user=ansible" >> /shared/inventory
+      echo "192.168.56.11 ansible_user=homework" >> /shared/inventory
     SHELL
   end
 
@@ -34,13 +34,13 @@ Vagrant.configure("2") do |config|
     web.vm.synced_folder "./shared", "/shared", type: "virtualbox"
     
     web.vm.provision "shell", inline: <<-SHELL
-      sudo useradd -m -s /bin/bash ansible
-      echo "ansible:ansible" | sudo chpasswd
-      echo "ansible ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible
-      sudo mkdir -p /home/ansible/.ssh
-      sudo cp /shared/id_rsa.pub /home/ansible/.ssh/authorized_keys
-      sudo chown -R ansible:ansible /home/ansible/.ssh
-      sudo chmod 600 /home/ansible/.ssh/authorized_keys
+      sudo useradd -m -s /bin/bash homework
+      echo "homework:homework" | sudo chpasswd
+      echo "homework ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/homework
+      sudo mkdir -p /home/homework/.ssh
+      sudo cp /shared/id_rsa.pub /home/homework/.ssh/authorized_keys
+      sudo chown -R homework:homework /home/homework/.ssh
+      sudo chmod 600 /home/homework/.ssh/authorized_keys
     SHELL
   end
 end
