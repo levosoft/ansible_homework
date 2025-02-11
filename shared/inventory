@@ -1,2 +1,2 @@
 [web]
-192.168.56.11 ansible_user=homework ansible_ssh_private_key_file=/shared/web_private_key
+192.168.56.11 ansible_user=homework ansible_ssh_private_key_file=/home/vagrant/.ssh/id_rsa
