@@ -42,8 +42,9 @@ project_root/
 ├── shared/
 │   ├── inventory
 │   ├── nginx_install.yml
-│   ├── templates/
 │   ├── shared/
+├── templates/
+│   ├── index.html.j2
 └── README.md
 ```
 
