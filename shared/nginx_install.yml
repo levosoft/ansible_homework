@@ -17,5 +17,7 @@
 
     - name: HTML fájl létrehozása sablonból
       template:
-        src: index.html.j2
-        dest: /usr/share/nginx/html/index.html
+        src: "/shared/templates/index.html.j2"
+        dest: "/usr/share/nginx/html/index.html"
+      vars:
+        ansible_encoding: "utf-8"
