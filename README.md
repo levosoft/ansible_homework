@@ -27,6 +27,12 @@ Miután a gépek elindultak, lépj be az **Ansible** szerverbe:
 ```bash
 vagrant ssh ansible
 ```
+
+Telepítsd a távoli repository-t:
+```bash
+/shared/git.sh
+```
+
 Ezután futtasd az Ansible playbookot az alábbi paranccsal:
 ```bash
 ansible-playbook -i /shared/inventory /shared/nginx_install.yml
